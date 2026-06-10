@@ -32,7 +32,7 @@ export default function AboutSection() {
             </div>
           </div>
 
-          <div className="col-lg-6">
+          <div className="col-lg-6">                                            
             <div className="about-three__content">
               <div className="section-title">
                 <h5 className="section-title__tagline section-title__tagline--has-dots">
