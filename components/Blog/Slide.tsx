@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 
 import { Plus_Jakarta_Sans } from "next/font/google";
+import CustomImage from "@/components/CustomImage";
 const plusJakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800"],
@@ -19,7 +20,7 @@ const Slide = () => {
             {/* ===== SLIDE 1 ===== */}
             <div className="min-w-full h-full relative flex items-end">
               {/* img */}
-              <img
+              <CustomImage
                 src="https://bzanalytics.ai/assets/images/blog/rag-l.jpg"
                 className="absolute inset-0 w-full h-[300px] sm:h-[550px] object-cover rounded-2xl"
                 alt=""
@@ -57,7 +58,7 @@ const Slide = () => {
 
             {/* ===== SLIDE 2 ===== */}
             <div className="min-w-full h-full relative flex items-end">
-              <img
+              <CustomImage
                 src="https://bzanalytics.ai/assets/images/blog/fashion-l.jpg"
                 className="absolute inset-0 w-full h-[300px] sm:h-[550px] object-cover rounded-2xl"
                 alt=""
@@ -95,7 +96,7 @@ const Slide = () => {
 
             {/* ===== SLIDE 3 ===== */}
             <div className="min-w-full h-full relative flex items-end">
-              <img
+              <CustomImage
                 src="https://bzanalytics.ai/assets/images/blog/Blog_L11.jpg"
                 className="absolute inset-0 w-full h-[300px] sm:h-[550px] object-cover rounded-2xl"
                 alt=""
@@ -133,7 +134,7 @@ const Slide = () => {
 
             {/* ===== SLIDE 4 ===== */}
             <div className="min-w-full h-full relative flex items-end">
-              <img
+              <CustomImage
                 src="https://bzanalytics.ai/assets/images/blog/Blog_L10.jpg"
                 className="absolute inset-0 w-full h-[300px] sm:h-[550px] object-cover rounded-2xl"
                 alt=""

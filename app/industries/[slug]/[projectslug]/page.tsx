@@ -5,6 +5,7 @@ import { useParams, useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { Check, ChevronLeft, ChevronRight } from "lucide-react";
 import BreadcrumbWrapper from "@/components/BreadcrumbWrapper";
+import CustomImage from "@/components/CustomImage";
 
 interface BulletItem {
   title: string;
@@ -1232,7 +1233,7 @@ const nextProject =
                         viewport={{ once: true }}
                         className="flex-grow flex-shrink basis-[400px] max-w-full flex justify-center items-center"
                       >
-                        <img 
+                        <CustomImage 
                           src={image.img} 
                           alt={`grid-img-${iIndex}`}
                           style={{ 
@@ -1346,7 +1347,7 @@ const nextProject =
                   </motion.div>
 
                   <motion.div className="flex-1 min-w-[300px]">
-                    <img 
+                    <CustomImage 
                       src={item.img} 
                       alt="Data analysis" 
                       style={{ width: item.width || "100%", height: "auto", maxWidth: "100%" }}
@@ -1430,7 +1431,7 @@ const nextProject =
             <h2 className="text-[clamp(28px,7vw,45px)] font-extrabold dark:text-white leading-tight">Explore similar portfolio<br className="hidden md:block"/>you might like it</h2>
           </motion.div>
 
-<div className="flex flex-wrap justify-center gap-7"> {[ { name: "AI Sustainability", img: "/turf.jpg" }, { name: "Minecraft Game", img: "/minecraft.jpg" }, { name: "AI Medical Imaging", img: "/medical.jpg" } ].map((item, i) => ( <motion.div whileHover={{ y: -10 }} key={i} className="group cursor-pointer flex-grow flex-shrink basis-[300px] max-w-[400px]"> <div className="w-full h-[350px] overflow-hidden"> <img src={item.img} className="w-full h-full object-cover" alt={item.name} /> </div> <h4 className="text-2xl text-black dark:text-white font-black mt-4">{item.name}</h4> </motion.div> ))} </div>
+<div className="flex flex-wrap justify-center gap-7"> {[ { name: "AI Sustainability", img: "/turf.jpg" }, { name: "Minecraft Game", img: "/minecraft.jpg" }, { name: "AI Medical Imaging", img: "/medical.jpg" } ].map((item, i) => ( <motion.div whileHover={{ y: -10 }} key={i} className="group cursor-pointer flex-grow flex-shrink basis-[300px] max-w-[400px]"> <div className="w-full h-[350px] overflow-hidden"> <CustomImage src={item.img} className="w-full h-full object-cover" alt={item.name} /> </div> <h4 className="text-2xl text-black dark:text-white font-black mt-4">{item.name}</h4> </motion.div> ))} </div>
         </section>
       </main>
     </>

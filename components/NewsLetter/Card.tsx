@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import CustomImage from "@/components/CustomImage";
 
 type News = {
   id: number;
@@ -51,7 +52,7 @@ const Newscard = () => {
        {NewsData.map((news) => (
   <Link key={news.id} href={`/news/${news.slug}`}>
             <div className="w-full max-w-[374px] h-full bg-[#f7f7f7] rounded-[10px] shadow-[0px_4px_8px_rgba(0,0,0,0.2),0px_6px_20px_rgba(0,0,0,0.19)] pt-[10px] px-[10px] pb-[20px] flex flex-col text-[14px] sm:text-[16px] font-medium leading-[24px] sm:leading-[30px] tracking-[0.5px] transition-transform duration-300 ease-in hover:scale-105">
-              <img
+              <CustomImage
                 src={news.image}
                 className="w-full h-[160px] sm:h-[180px] object-cover rounded-[10px]"
                 alt={news.title}

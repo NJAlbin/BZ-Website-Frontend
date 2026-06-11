@@ -6,6 +6,7 @@ import { useParams } from "next/navigation";
 import { FaFacebookF, FaLinkedinIn } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import BreadcrumbWrapper from "@/components/BreadcrumbWrapper";
+import CustomImage from "@/components/CustomImage";
 
 
 
@@ -188,7 +189,7 @@ const { slug } = useParams();
 
           {/* TOP IMAGE */}
           <div className="relative overflow-hidden">
-            <img
+            <CustomImage
               src={news.image}
               alt="news"
               className="w-full md:w-[700px] h-[360px] sm:h-[280px] md:h-[450px] object-cover"
@@ -247,7 +248,7 @@ if (item.type === "p") {
       {item.text}
     </p>
   );
-}            if (item.type === "img" && "src" in item) return <img key={index} src={item.src as string} alt="" />;
+}            if (item.type === "img" && "src" in item) return <CustomImage key={index} src={item.src as string} alt="" />;
             if (item.type === "ol" && "items" in item && item.items)
               return (
                 <ul key={index} className="list-disc pl-5 mt-4 space-y-3">

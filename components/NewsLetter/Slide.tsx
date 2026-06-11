@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import Link from "next/link";
+import CustomImage from "@/components/CustomImage";
 
 type News = {
   id: number;
@@ -87,7 +88,7 @@ const Slide = () => {
               className="min-w-full h-full relative flex items-end"
             >
               {/* img */}
-              <img
+              <CustomImage
                 src={news.image}
                 className="absolute inset-0 w-full h-[300px] sm:h-[550px] object-cover rounded-2xl"
                 alt="news"

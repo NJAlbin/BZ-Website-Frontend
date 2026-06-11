@@ -4,6 +4,7 @@ import BreadcrumbWrapper from "@/components/BreadcrumbWrapper";
 import { useParams } from "next/navigation";
 import { FaFacebookF, FaLinkedinIn } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
+import CustomImage from "@/components/CustomImage";
 
 
 const blogsData = [
@@ -952,7 +953,7 @@ export default function BlogPage() {
           >
             {/* TOP IMAGE */}
             <div className="relative overflow-hidden mb-20">
-              <img
+              <CustomImage
                 src={blog.image}
                 alt="blog"
                 className="w-full md:w-[700px] h-[360px] sm:h-[280px] md:h-[450px] object-cover"
@@ -1004,7 +1005,7 @@ export default function BlogPage() {
               if (item.type === "h2") return <h2 key={index}>{item.text}</h2>;
               if (item.type === "p") return <p key={index}>{item.text}</p>;
               if (item.type === "img")
-                return <img key={index} src={item.src} alt="" />;
+                return <CustomImage key={index} src={item.src} alt="" />;
               if (item.type === "ol" && item.items)
                 return (
                   <ul key={index} className="list-disc pl-5 mt-4 space-y-3">

@@ -9,6 +9,7 @@ import { FiArrowDownRight } from "react-icons/fi";
 import { RxDotFilled } from "react-icons/rx";
 import Link from "next/link";
 import { useTheme } from "next-themes";
+import CustomImage from "@/components/CustomImage";
 
 
 const pageData = [
@@ -136,7 +137,7 @@ const cursorX = useMotionValue(0);
     >
       <div className="md:col-span-6 flex justify-center md:justify-end order-2 md:order-1">
         <div className="overflow-hidden shadow-2xl w-full max-w-[560px]">
-          <img 
+          <CustomImage 
             src={story.img} 
             alt={story.title} 
             className="w-full h-auto md:w-[560px] md:h-[339px] object-cover"
@@ -243,7 +244,7 @@ return (
       }}
       className="project-img hidden lg:block pointer-events-none w-80 h-52 overflow-hidden opacity-0 scale-75 transition-all duration-500 ease-out group-hover:opacity-100 group-hover:scale-100 z-10 shadow-2xl"
     >
-      <img src={item.img} alt={item.title} className="w-full h-full object-cover" />
+      <CustomImage src={item.img} alt={item.title} className="w-full h-full object-cover" />
     </motion.div>
   </motion.div>
 );

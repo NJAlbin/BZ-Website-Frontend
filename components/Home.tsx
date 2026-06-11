@@ -11,6 +11,7 @@ import img from "next/image";
 import HomeReview from "./about/HomeReview";
 
 import { FaArrowRight } from "react-icons/fa6";
+import CustomImage from "@/components/CustomImage";
 
 interface CardItem {
   title: string;
@@ -465,7 +466,7 @@ hover:w-[420px] hover:h-[280px] hover:z-20
 "
                 >
                   {/* img */}
-                  <img
+                  <CustomImage
                     src={card.img}
                     alt={card.title}
                      
@@ -563,7 +564,7 @@ hover:w-[420px] hover:h-[280px] hover:z-20
           className="relative w-full max-w-sm overflow-hidden shadow-lg group cursor-pointer"
         >
           {/* Image */}
-          <img
+          <CustomImage
             src={card.img}
             alt=""
             className="w-full h-[350px] object-cover transition-transform duration-700 group-hover:scale-110"
@@ -740,7 +741,7 @@ hover:w-[420px] hover:h-[280px] hover:z-20
               }}
               className="project-img absolute w-84.25 h-55.75 top-12.5   pointer-events-none overflow-hidden opacity-0 transform scale-[0.8] transition-all duration-500 ease-in-out z-0 group-hover:opacity-100 group-hover:-z-10 group-hover:scale-100 group-hover:rotate-[5deg]"
             >
-              <img
+              <CustomImage
                 className="w-full h-full object-cover relative transition-all duration-300 ease-in-out dark:mix-blend-normal mix-blend-luminosity"
                 src="/dubai.jpg"
                  
@@ -782,7 +783,7 @@ hover:w-[420px] hover:h-[280px] hover:z-20
               }}
               className="project-img absolute w-84.25 h-55.75 top-12.5   pointer-events-none overflow-hidden opacity-0 transform scale-[0.8] transition-all duration-500 ease-in-out z-0 group-hover:opacity-100 group-hover:-z-10 group-hover:scale-100 group-hover:rotate-[5deg]"
             >
-              <img
+              <CustomImage
                 className="w-full h-full object-cover relative transition-all duration-300 ease-in-out dark:mix-blend-normal mix-blend-luminosity"
                 src="/bzmart.jpg"
                  
@@ -824,7 +825,7 @@ hover:w-[420px] hover:h-[280px] hover:z-20
               }}
               className="project-img absolute w-84.25 h-55.75 top-12.5   pointer-events-none overflow-hidden opacity-0 transform scale-[0.8] transition-all duration-500 ease-in-out z-0 group-hover:opacity-100 group-hover:-z-10 group-hover:scale-100 group-hover:rotate-[5deg]"
             >
-              <img
+              <CustomImage
                 className="w-full h-full object-cover relative transition-all duration-300 ease-in-out dark:mix-blend-normal mix-blend-luminosity"
                 src="/medical.jpg"
                 alt="Medical AI"
@@ -866,7 +867,7 @@ hover:w-[420px] hover:h-[280px] hover:z-20
               }}
               className="project-img absolute w-84.25 h-55.75 top-12.5   pointer-events-none overflow-hidden opacity-0 transform scale-[0.8] transition-all duration-500 ease-in-out z-0 group-hover:opacity-100 group-hover:-z-10 group-hover:scale-100 group-hover:rotate-[5deg]"
             >
-              <img
+              <CustomImage
                 className="w-full h-full object-cover relative transition-all duration-300 ease-in-out mix-blend-normal"
                 src="/turf.jpg"
                 alt="Turf"
@@ -888,7 +889,7 @@ hover:w-[420px] hover:h-[280px] hover:z-20
           >
             <div className=" flex flex-col gap-y-5">
               <div className="">
-                <img
+                <CustomImage
                   src="/why-choose-2-1.jpg"
                   alt=""
                   className="w-full object-cover"
@@ -896,12 +897,12 @@ hover:w-[420px] hover:h-[280px] hover:z-20
               </div>
 
               <div className="">
-                <img src="/why-choose-2-2.jpg" alt="" />
+                <CustomImage src="/why-choose-2-2.jpg" alt="" />
               </div>
             </div>
 
             <div className="">
-              <img
+              <CustomImage
                 src="/why-choose-2-3.jpg"
                 alt=""
                 className="w-full object-cover"
@@ -1010,7 +1011,7 @@ hover:w-[420px] hover:h-[280px] hover:z-20
       >
         {/* Background */}
         <div className="absolute inset-0 flex items-start justify-center">
-          <img
+          <CustomImage
             alt="award"
             src="/award-bg.png"
             width={645}
@@ -1031,7 +1032,7 @@ hover:w-[420px] hover:h-[280px] hover:z-20
                 100+APIs that can connect with your existing infrastructure and
                 3rd party apps
               </p>
-              <img alt="icon" src="/award-icon.png" className="w-6 mt-2.5" />
+              <CustomImage alt="icon" src="/award-icon.png" className="w-6 mt-2.5" />
             </div>
 
             {/* Card 2 */}
@@ -1042,7 +1043,7 @@ hover:w-[420px] hover:h-[280px] hover:z-20
               <p className="award_title text-white font-bold text-xl sm:text-">
                 Deploy on any cloud/on-premise environment
               </p>
-              <img alt="icon" src="/award-icon.png" className="w-6 mt-2.5" />
+              <CustomImage alt="icon" src="/award-icon.png" className="w-6 mt-2.5" />
             </div>
 
             <div
@@ -1053,7 +1054,7 @@ hover:w-[420px] hover:h-[280px] hover:z-20
                 Improved customer and employee experience via mobile and web
                 apps.
               </p>
-              <img alt="icon" src="/award-icon.png" className="w-6 mt-2.5" />
+              <CustomImage alt="icon" src="/award-icon.png" className="w-6 mt-2.5" />
             </div>
 
             {/* Card 4 */}
@@ -1065,12 +1066,12 @@ hover:w-[420px] hover:h-[280px] hover:z-20
                 Basic to advance machine learning models that fits into a
                 different level of data maturity
               </p>
-              <img alt="icon" src="/award-icon.png" className="w-6 mt-2.5" />
+              <CustomImage alt="icon" src="/award-icon.png" className="w-6 mt-2.5" />
             </div>
           </div>
 
           <div className="">
-            <img
+            <CustomImage
               alt="award"
               src="/award.png"
               width={314}
@@ -1093,7 +1094,7 @@ hover:w-[420px] hover:h-[280px] hover:z-20
                 100+APIs that can connect with your existing infrastructure and
                 3rd party apps
               </p>
-              <img alt="icon" src="/award-icon.png" className="w-6 mt-2.5" />
+              <CustomImage alt="icon" src="/award-icon.png" className="w-6 mt-2.5" />
             </div>
 
             {/* Card 2 */}
@@ -1104,12 +1105,12 @@ hover:w-[420px] hover:h-[280px] hover:z-20
               <p className="award_title text-white font-bold text-xl sm:text-">
                 Deploy on any cloud/on-premise environment
               </p>
-              <img alt="icon" src="/award-icon.png" className="w-6 mt-2.5" />
+              <CustomImage alt="icon" src="/award-icon.png" className="w-6 mt-2.5" />
             </div>
           </div>
 
           {/* Center img */}
-          <img
+          <CustomImage
             alt="award"
             src="/award.png"
             width={314}
@@ -1128,7 +1129,7 @@ hover:w-[420px] hover:h-[280px] hover:z-20
                 Improved customer and employee experience via mobile and web
                 apps.
               </p>
-              <img alt="icon" src="/award-icon.png" className="w-6 mt-2.5" />
+              <CustomImage alt="icon" src="/award-icon.png" className="w-6 mt-2.5" />
             </div>
 
             {/* Card 4 */}
@@ -1140,7 +1141,7 @@ hover:w-[420px] hover:h-[280px] hover:z-20
                 Basic to advance machine learning models that fits into a
                 different level of data maturity
               </p>
-              <img alt="icon" src="/award-icon.png" className="w-6 mt-2.5" />
+              <CustomImage alt="icon" src="/award-icon.png" className="w-6 mt-2.5" />
             </div>
           </div>
         </div>
@@ -1168,7 +1169,7 @@ hover:w-[420px] hover:h-[280px] hover:z-20
                 100+APIs that can connect with your existing infrastructure and
                 3rd party apps
               </p>
-              <img
+              <CustomImage
               alt="icon"
                 src="/award-icon.png"
                 className="mt-2.5 group-hover:scale-90 transition-all duration-1000 ease-in-out"
@@ -1183,7 +1184,7 @@ hover:w-[420px] hover:h-[280px] hover:z-20
               <p className="award_title text-white font-bold text-xl sm:text-">
                 Deploy on any cloud/on-premise environment
               </p>
-              <img
+              <CustomImage
               alt="icon"
                 src="/award-icon.png"
                 className=" mt-2.5 group-hover:scale-90 transition-all duration-1000 ease-in-out"
@@ -1198,7 +1199,7 @@ hover:w-[420px] hover:h-[280px] hover:z-20
             data-aos-duration="3000"
             className="award-trophy mt-16"
           >
-            <img
+            <CustomImage
               alt="award"
               src="/award.png"
               width={314}
@@ -1222,7 +1223,7 @@ hover:w-[420px] hover:h-[280px] hover:z-20
                 Improved customer and employee experience via mobile and web
                 apps.
               </p>
-              <img
+              <CustomImage
               alt="icon"
                 src="/award-icon.png"
                 className=" mt-2.5 group-hover:scale-90 transition-all duration-1000 ease-in-out"
@@ -1238,7 +1239,7 @@ hover:w-[420px] hover:h-[280px] hover:z-20
                 Basic to advance machine learning models that fits into a
                 different level of data maturity
               </p>
-              <img
+              <CustomImage
               alt="icon"
                 src="/award-icon.png"
                 className=" mt-2.5 group-hover:scale-90 transition-all duration-1000 ease-in-out"
@@ -1302,7 +1303,7 @@ hover:w-[420px] hover:h-[280px] hover:z-20
                 >
                   <div className="relative mx-auto mb-7 h-44 w-44 rounded-full border-[3px] border-[#f5900d] bg-black p-1.5 sm:h-52 sm:w-52">
                     <div className="work-process-one__item__thumb relative h-full w-full overflow-hidden rounded-full bg-black">
-                      <img
+                      <CustomImage
                         src={step.image}
                         alt={step.title}
                          
@@ -1400,7 +1401,7 @@ hover:w-[420px] hover:h-[280px] hover:z-20
                 <div className="group cursor-pointer">
                   {/* img Section */}
                   <div className="relative overflow-hidden group/img">
-                    <img
+                    <CustomImage
                       src={item.image}
                       alt={item.title}
                       width={500}
