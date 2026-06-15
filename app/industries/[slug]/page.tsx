@@ -9,6 +9,8 @@ import { FiArrowDownRight } from "react-icons/fi";
 import { RxDotFilled } from "react-icons/rx";
 import Link from "next/link";
 import { useTheme } from "next-themes";
+import Image from "next/image";
+
 
 
 const pageData = [
@@ -126,31 +128,35 @@ const cursorX = useMotionValue(0);
   </button>
 
   <AnimatePresence mode="wait">
-    <motion.div
-      key={story.slug}
-      initial={{ opacity: 0, x: 30 }}
-      animate={{ opacity: 1, x: 0 }}
-      exit={{ opacity: 0, x: -30 }}
-      transition={{ duration: 0.5 }}
-      className="order-2 grid grid-cols-1 md:grid-cols-12 gap-8 items-center w-full max-w-[1400px] mx-auto"
-    >
-      <div className="md:col-span-6 flex justify-center md:justify-end order-2 md:order-1">
-        <div className="overflow-hidden shadow-2xl w-full max-w-[560px]">
-          <img 
-            src={story.img} 
-            alt={story.title} 
+  <motion.div
+    key={story.slug}
+    initial={{ opacity: 0, x: 30 }}
+    animate={{ opacity: 1, x: 0 }}
+    exit={{ opacity: 0, x: -30 }}
+    transition={{ duration: 0.5 }}
+    className="order-2 grid grid-cols-1 md:grid-cols-12 gap-8 items-center w-full max-w-[1400px] mx-auto"
+  >
+    <div className="md:col-span-6 flex justify-center md:justify-end order-2 md:order-1">
+      <div className="overflow-hidden shadow-2xl w-full max-w-[560px]">
+        {story.img && (
+          <Image
+            src={story.img}
+            alt={story.title}
+            width={560}
+            height={339}
             className="w-full h-auto md:w-[560px] md:h-[339px] object-cover"
           />
-        </div>
+        )}
       </div>
+    </div>
 
-      <div className="md:col-span-6 lg:col-span-5 flex justify-center order-1 md:order-2">
-        <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight text-center md:text-left max-w-[500px]">
-          {story.title}
-        </h2>
-      </div>
-    </motion.div>
-  </AnimatePresence>
+    <div className="md:col-span-6 lg:col-span-5 flex justify-center order-1 md:order-2">
+      <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight text-center md:text-left max-w-[500px]">
+        {story.title}
+      </h2>
+    </div>
+  </motion.div>
+</AnimatePresence>
 
   <button 
     onClick={goToNext} 
@@ -231,20 +237,27 @@ return (
     </button>
 
     <motion.div
-      style={{
-        x: smoothX,
-        y: smoothY,
-        translateX: '-50%',
-        translateY: '-50%',
-        rotate: '5deg',
-        position: 'fixed',
-        top: 0,
-        left: 0,
-      }}
-      className="project-img hidden lg:block pointer-events-none w-80 h-52 overflow-hidden opacity-0 scale-75 transition-all duration-500 ease-out group-hover:opacity-100 group-hover:scale-100 z-10 shadow-2xl"
-    >
-      <img src={item.img} alt={item.title} className="w-full h-full object-cover" />
-    </motion.div>
+  style={{
+    x: smoothX,
+    y: smoothY,
+    translateX: '-50%',
+    translateY: '-50%',
+    rotate: '5deg',
+    position: 'fixed',
+    top: 0,
+    left: 0,
+  }}
+  className="project-img hidden lg:block pointer-events-none w-80 h-52 overflow-hidden opacity-0 scale-75 transition-all duration-500 ease-out group-hover:opacity-100 group-hover:scale-100 z-10 shadow-2xl relative"
+>
+  {item.img && (
+    <Image
+      src={item.img}
+      alt={item.title}
+      fill
+      className="object-cover"
+    />
+  )}
+</motion.div>
   </motion.div>
 );
             })}

@@ -6,7 +6,7 @@ import { useParams } from "next/navigation";
 import { FaFacebookF, FaLinkedinIn } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import BreadcrumbWrapper from "@/components/BreadcrumbWrapper";
-import img from "next/image";
+import Image from "next/image";
 
 
 
@@ -188,42 +188,47 @@ const { slug } = useParams();
         >
 
           {/* TOP IMAGE */}
-          <div className="relative overflow-hidden">
-            <img
-              src={news.image}
-              alt="news"
-              className="w-full md:w-[700px] h-[360px] sm:h-[280px] md:h-[450px] object-cover"
-            />
+<div className="relative overflow-hidden w-full md:w-[700px] h-[360px] sm:h-[280px] md:h-[450px]">
+  
+  {/* IMAGE */}
+  {news.image && (
+    <Image
+      src={news.image}
+      alt={news.title || "news image"}
+      fill
+      className="object-cover"
+    />
+  )}
 
-            {/* OVERLAY */}
-            <div className="absolute bottom-0 left-0 w-full 
-              h-[85%] sm:h-[75%] md:h-[45%] 
-              bg-black/40 backdrop-blur-sm">
-            </div>
+  {/* OVERLAY */}
+  <div className="absolute bottom-0 left-0 w-full 
+    h-[85%] sm:h-[75%] md:h-[45%] 
+    bg-black/40 backdrop-blur-sm">
+  </div>
 
-            {/* CONTENT */}
-            <div className="absolute bottom-2 left-3 md:left-6 right-3 md:right-6 flex flex-col gap-1">
+  {/* CONTENT */}
+  <div className="absolute bottom-2 left-3 md:left-6 right-3 md:right-6 flex flex-col gap-1">
 
-              {/* BADGE */}
-              <div className="inline-flex items-center gap-2 bg-white px-2 py-1.5 rounded-2xl w-fit max-w-full">
-                <span className="w-4 h-4 bg-orange-400 rounded-full shrink-0"></span>
-                <p className="text-[10px] sm:text-sm text-orange-400 break-words">
-                  {news.category}
-                </p>
-              </div>
+    {/* BADGE */}
+    <div className="inline-flex items-center gap-2 bg-white px-2 py-1.5 rounded-2xl w-fit max-w-full">
+      <span className="w-4 h-4 bg-orange-400 rounded-full shrink-0"></span>
+      <p className="text-[10px] sm:text-sm text-orange-400 break-words">
+        {news.category}
+      </p>
+    </div>
 
-              {/* TITLE */}
-              <h2 className="text-white text-[14px] md:text-[25px] font-bold leading-5 md:leading-9 mt-2 break-words">
-                {news.title}
-              </h2>
+    {/* TITLE */}
+    <h2 className="text-white text-[14px] md:text-[25px] font-bold leading-5 md:leading-9 mt-2 break-words">
+      {news.title}
+    </h2>
 
-              {/* META */}
-              <p className="text-white text-[11px] sm:text-[14px] mt-1">
-                {news.date} • {news.readTime}
-              </p>
-            </div>
-          </div>
+    {/* META */}
+    <p className="text-white text-[11px] sm:text-[14px] mt-1">
+      {news.date} • {news.readTime}
+    </p>
+  </div>
 
+</div>
           {/* ✅ MOBILE ONLY - BELOW IMAGE */}
           <div className="block md:hidden mt-4">
             <h2 className="text-[20px] mb-4 font-semibold text-black dark:text-white">
@@ -248,8 +253,18 @@ if (item.type === "p") {
       {item.text}
     </p>
   );
-}            if (item.type === "img" && "src" in item) return <img key={index} src={item.src as string} alt="" />;
-            if (item.type === "ol" && "items" in item && item.items)
+}            
+if (item.type === "img" && "src" in item && item.src) {
+  return (
+    <Image
+      key={index}
+      src={item.src as string}
+      alt="image"
+      width={300}
+      height={200}
+    />
+  );
+}            if (item.type === "ol" && "items" in item && item.items)
               return (
                 <ul key={index} className="list-disc pl-5 mt-4 space-y-3">
                   {(item.items as string[]).map((li, i) => <li key={i}>{li}</li>)}

@@ -1,6 +1,7 @@
 "use client";
-import img from "next/image";
 import Link from "next/link";
+import Image from "next/image";
+
 
 type News = {
   id: number;
@@ -52,29 +53,35 @@ const Threecard = () => {
        {NewsData.map((news) => (
   <Link key={news.id} href={`/news/${news.slug}`}>
             <div className="w-full max-w-[374px] h-full bg-[#f7f7f7] rounded-[10px] shadow-[0px_4px_8px_rgba(0,0,0,0.2),0px_6px_20px_rgba(0,0,0,0.19)] pt-[10px] px-[10px] pb-[20px] flex flex-col text-[14px] sm:text-[16px] font-medium leading-[24px] sm:leading-[30px] tracking-[0.5px] transition-transform duration-300 ease-in hover:scale-105">
-              <img
-                src={news.image}
-                className="w-full h-[160px] sm:h-[180px] object-cover rounded-[10px]"
-                alt={news.title}
-              />
+  
+  <div className="relative w-full h-[160px] sm:h-[180px]">
+    {news.image && (
+      <Image
+        src={news.image}
+        alt={news.title || "news image"}
+        fill
+        className="object-cover rounded-[10px]"
+      />
+    )}
+  </div>
 
-              <div className="flex flex-col flex-grow gap-[6px] mt-[8px]">
-                <div className="flex items-center text-orange-400">
-                  <span className="text-xl sm:text-3xl mr-2 -translate-y-1">
-                    •
-                  </span>
-                  <span>{news.category}</span>
-                </div>
+  <div className="flex flex-col flex-grow gap-[6px] mt-[8px]">
+    <div className="flex items-center text-orange-400">
+      <span className="text-xl sm:text-3xl mr-2 -translate-y-1">
+        •
+      </span>
+      <span>{news.category}</span>
+    </div>
 
-                <h6 className="text-black font-semibold text-[18px] leading-[22px] mb-2 tracking-[0.5px] line-clamp-2">
-                  {news.title}
-                </h6>
+    <h6 className="text-black font-semibold text-[18px] leading-[22px] mb-2 tracking-[0.5px] line-clamp-2">
+      {news.title}
+    </h6>
 
-                <span className="text-black text-xs sm:text-sm mt-1">
-                  {news.date} • {news.readTime}
-                </span>
-              </div>
-            </div>
+    <span className="text-black text-xs sm:text-sm mt-1">
+      {news.date} • {news.readTime}
+    </span>
+  </div>
+</div>
           </Link>
         ))}
       </div>
